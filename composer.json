@@ -1,0 +1,17 @@
+{
+    "name": "zr/solr-search-bundle",
+    "description": "A short description of what your package does",
+    "type": "drupal-recipe",
+    "require": {
+        "php": ">=8.1",
+        "drupal/search_api_solr": "^4.3",
+        "drupal/facets": "^3.0"
+    },
+    "authors": [
+        {
+            "name": "Arisha Salman",
+            "email": "webifyworld2020@gmail.com"
+        }
+    ],
+    "license": "GPL-2.0-or-later"
+}

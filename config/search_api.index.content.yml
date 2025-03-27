@@ -1,0 +1,210 @@
+uuid: 78cec09d-b030-416f-b36b-aaa0a8fcf558
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.block_content.body
+    - field.storage.block_content.field_copy_text
+    - field.storage.block_content.field_description
+    - field.storage.node.field_categories
+    - field.storage.node.field_quote
+    - field.storage.node.field_role
+    - field.storage.node.field_subtitle
+    - field.storage.node.field_tags
+    - field.storage.node.field_weighting
+    - search_api.server.solr
+  module:
+    - block_content
+    - node
+    - search_api_solr
+    - taxonomy
+third_party_settings:
+  search_api_solr:
+    finalize: false
+    commit_before_finalize: false
+    commit_after_finalize: false
+    debug_finalize: false
+    highlighter:
+      maxAnalyzedChars: 51200
+      fragmenter: gap
+      usePhraseHighlighter: true
+      highlightMultiTerm: true
+      preserveMulti: false
+      regex:
+        slop: 0.5
+        pattern: blank
+        maxAnalyzedChars: 10000
+      highlight:
+        mergeContiguous: false
+        requireFieldMatch: false
+        snippets: 3
+        fragsize: 0
+    mlt:
+      mintf: 1
+      mindf: 1
+      maxdf: 0
+      maxdfpct: 0
+      minwl: 0
+      maxwl: 0
+      maxqt: 100
+      maxntp: 2000
+      boost: false
+      interestingTerms: none
+    term_modifiers:
+      slop: 3
+      fuzzy: 1
+      fuzzy_analyzer: true
+    advanced:
+      index_prefix: ''
+      collection: ''
+      timezone: ''
+    multilingual:
+      limit_to_content_language: false
+      include_language_independent: true
+      use_language_undefined_as_fallback_language: false
+      specific_languages:
+        en: '0'
+      use_universal_collation: false
+id: content
+name: Content
+description: ''
+read_only: false
+field_settings:
+  field_categories:
+    label: Categories
+    datasource_id: 'entity:node'
+    property_path: field_categories
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_categories
+  field_quote:
+    label: Quote
+    datasource_id: 'entity:node'
+    property_path: field_quote
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_quote
+  field_subtitle:
+    label: Subtitle
+    datasource_id: 'entity:node'
+    property_path: field_subtitle
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_subtitle
+  field_tags:
+    label: Tags
+    datasource_id: 'entity:node'
+    property_path: field_tags
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_tags
+  field_weighting:
+    label: Weighting
+    datasource_id: 'entity:node'
+    property_path: field_weighting
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_weighting
+  name:
+    label: 'Role » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_role:entity:name'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_role
+      module:
+        - taxonomy
+  name_1:
+    label: 'Categories » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_categories:entity:name'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_categories
+      module:
+        - taxonomy
+  processed:
+    label: 'Copy text » Processed text'
+    datasource_id: 'entity:block_content'
+    property_path: 'field_copy_text:processed'
+    type: text
+    dependencies:
+      config:
+        - field.storage.block_content.field_copy_text
+  processed_1:
+    label: 'Body » Processed text'
+    datasource_id: 'entity:block_content'
+    property_path: 'body:processed'
+    type: text
+    dependencies:
+      config:
+        - field.storage.block_content.body
+  processed_2:
+    label: 'Description » Processed text'
+    datasource_id: 'entity:block_content'
+    property_path: 'field_description:processed'
+    type: text
+    dependencies:
+      config:
+        - field.storage.block_content.field_description
+  title:
+    label: Title
+    datasource_id: 'entity:node'
+    property_path: title
+    type: text
+    dependencies:
+      module:
+        - node
+datasource_settings:
+  'entity:block_content':
+    bundles:
+      default: true
+      selected: {  }
+    languages:
+      default: true
+      selected: {  }
+  'entity:node':
+    bundles:
+      default: true
+      selected: {  }
+    languages:
+      default: true
+      selected: {  }
+processor_settings:
+  add_url: {  }
+  aggregated_field: {  }
+  auto_aggregated_fulltext_field: {  }
+  custom_value: {  }
+  entity_type: {  }
+  highlight:
+    weights:
+      postprocess_query: 0
+    prefix: '<strong>'
+    suffix: '</strong>'
+    excerpt: true
+    excerpt_always: false
+    excerpt_length: 256
+    exclude_fields: {  }
+    highlight: always
+    highlight_partial: true
+  language_with_fallback: {  }
+  rendered_item: {  }
+  solr_date_range:
+    weights:
+      preprocess_index: 0
+tracker_settings:
+  default:
+    indexing_order: fifo
+options:
+  cron_limit: 50
+  delete_on_fail: true
+  index_directly: true
+  track_changes_in_references: true
+server: solr

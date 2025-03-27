@@ -1,0 +1,14 @@
+name: 'Zoocha Solr Search starter'
+description: 'Installs SOLR Search related modules and configurations.'
+type: 'Feature'
+
+install:
+  - search_api
+  - search_api_solr
+  - search_api_autocomplete
+  - search_api_solr_admin
+  - facets
+  - facets_exposed_filters
+
+config:
+  strict: false
