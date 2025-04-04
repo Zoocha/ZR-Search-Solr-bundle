@@ -5,7 +5,8 @@
     "require": {
         "php": ">=8.1",
         "drupal/search_api_solr": "^4.3",
-        "drupal/facets": "^3.0"
+        "drupal/facets": "^3.0",
+        "drupal/search_api_autocomplete": "^1.10"
     },
     "authors": [
         {
