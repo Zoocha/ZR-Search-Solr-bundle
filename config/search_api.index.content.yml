@@ -1,23 +1,13 @@
-uuid: 78cec09d-b030-416f-b36b-aaa0a8fcf558
+uuid: 766fe49e-cfbe-4aed-a82b-3b7a19d41803
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.block_content.body
-    - field.storage.block_content.field_copy_text
-    - field.storage.block_content.field_description
-    - field.storage.node.field_categories
-    - field.storage.node.field_quote
-    - field.storage.node.field_role
-    - field.storage.node.field_subtitle
-    - field.storage.node.field_tags
-    - field.storage.node.field_weighting
     - search_api.server.solr
   module:
     - block_content
     - node
     - search_api_solr
-    - taxonomy
 third_party_settings:
   search_api_solr:
     finalize: false
@@ -69,99 +59,7 @@ id: content
 name: Content
 description: ''
 read_only: false
-field_settings:
-  field_categories:
-    label: Categories
-    datasource_id: 'entity:node'
-    property_path: field_categories
-    type: integer
-    dependencies:
-      config:
-        - field.storage.node.field_categories
-  field_quote:
-    label: Quote
-    datasource_id: 'entity:node'
-    property_path: field_quote
-    type: text
-    dependencies:
-      config:
-        - field.storage.node.field_quote
-  field_subtitle:
-    label: Subtitle
-    datasource_id: 'entity:node'
-    property_path: field_subtitle
-    type: text
-    dependencies:
-      config:
-        - field.storage.node.field_subtitle
-  field_tags:
-    label: Tags
-    datasource_id: 'entity:node'
-    property_path: field_tags
-    type: integer
-    dependencies:
-      config:
-        - field.storage.node.field_tags
-  field_weighting:
-    label: Weighting
-    datasource_id: 'entity:node'
-    property_path: field_weighting
-    type: integer
-    dependencies:
-      config:
-        - field.storage.node.field_weighting
-  name:
-    label: 'Role » Taxonomy term » Name'
-    datasource_id: 'entity:node'
-    property_path: 'field_role:entity:name'
-    type: text
-    dependencies:
-      config:
-        - field.storage.node.field_role
-      module:
-        - taxonomy
-  name_1:
-    label: 'Categories » Taxonomy term » Name'
-    datasource_id: 'entity:node'
-    property_path: 'field_categories:entity:name'
-    type: text
-    dependencies:
-      config:
-        - field.storage.node.field_categories
-      module:
-        - taxonomy
-  processed:
-    label: 'Copy text » Processed text'
-    datasource_id: 'entity:block_content'
-    property_path: 'field_copy_text:processed'
-    type: text
-    dependencies:
-      config:
-        - field.storage.block_content.field_copy_text
-  processed_1:
-    label: 'Body » Processed text'
-    datasource_id: 'entity:block_content'
-    property_path: 'body:processed'
-    type: text
-    dependencies:
-      config:
-        - field.storage.block_content.body
-  processed_2:
-    label: 'Description » Processed text'
-    datasource_id: 'entity:block_content'
-    property_path: 'field_description:processed'
-    type: text
-    dependencies:
-      config:
-        - field.storage.block_content.field_description
-  title:
-    label: Title
-    datasource_id: 'entity:node'
-    property_path: title
-    type: text
-    dependencies:
-      module:
-        - node
+field_settings: {  }
 datasource_settings:
   'entity:block_content':
     bundles:
@@ -183,22 +81,9 @@ processor_settings:
   auto_aggregated_fulltext_field: {  }
   custom_value: {  }
   entity_type: {  }
-  highlight:
-    weights:
-      postprocess_query: 0
-    prefix: '<strong>'
-    suffix: '</strong>'
-    excerpt: true
-    excerpt_always: false
-    excerpt_length: 256
-    exclude_fields: {  }
-    highlight: always
-    highlight_partial: true
   language_with_fallback: {  }
   rendered_item: {  }
-  solr_date_range:
-    weights:
-      preprocess_index: 0
+  solr_date_range: {  }
 tracker_settings:
   default:
     indexing_order: fifo

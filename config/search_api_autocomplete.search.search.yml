@@ -1,4 +1,4 @@
-uuid: db21a0e4-36d1-4664-9696-b39e9364f0ad
+uuid: 871b8dfa-7bed-42ce-81f1-7279e697565d
 langcode: en
 status: true
 dependencies:
@@ -6,7 +6,6 @@ dependencies:
     - search_api.index.content
     - views.view.search
   module:
-    - search_api_solr_autocomplete
     - views
 id: search
 label: Search
@@ -18,45 +17,12 @@ suggester_settings:
       enabled: false
       field: ''
     suggest_keys: false
-    view_modes:
-      'entity:block_content':
-        basic: ''
-        call_to_action: ''
-        call_to_action_pill: ''
-        copy: ''
-        hero: ''
-        link_list: ''
-        logo_gallery: ''
-        quote: ''
-        related_content: ''
-        stats: ''
-        webform: ''
-      'entity:node':
-        article: ''
-        news: ''
-        our_work: ''
-        page: ''
-        team_member: ''
-        vacancy: ''
-  search_api_solr_spellcheck: {  }
-  search_api_solr_suggester:
-    search_api_solr/site_hash: 1
-    search_api/index: content
-    drupal/langcode: any
-suggester_weights:
-  live_results: 0
-  search_api_solr_spellcheck: 0
-  search_api_solr_suggester: 0
+    view_modes: {  }
+suggester_weights: {  }
 suggester_limits: {  }
 search_settings:
   'views:search':
     displays:
       default: true
       selected: {  }
-options:
-  limit: 10
-  min_length: 1
-  show_count: false
-  delay: null
-  submit_button_selector: ':submit'
-  autosubmit: true
+options: {  }
