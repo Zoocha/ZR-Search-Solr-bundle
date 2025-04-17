@@ -6,6 +6,8 @@ dependencies:
     - search_api.index.content
   module:
     - search_api
+_core:
+  default_config_hash: L2aaQwW5M3w2-1d52RtmRbaBH6RLJu4tlg-uUKjLBjY
 id: search
 label: Search
 module: views
